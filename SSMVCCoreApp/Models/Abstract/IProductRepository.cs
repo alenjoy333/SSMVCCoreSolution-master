@@ -5,18 +5,20 @@ using SSMVCCoreApp.Models.Entities;
 
 namespace SSMVCCoreApp.Models.Abstract
 {
-  public interface IProductRepository
-  {
-    Task<List<Product>> GetAllProductsAsync();
+    public interface IProductRepository
+    {
+        Task<List<Product>> GetAllProductsAsync();
 
-    Task<Product> FindProductByIDAsync(int productId);
+        Task<Product> FindProductByIDAsync(int productId);
 
-    Task<List<Product>> FindProductsByCategoryAsync(string category);
+        Task<List<Product>> FindProductsByCategoryAsync(string category);
 
-    Task CreateAsync(Product product);
+        Task CreateAsync(Product product);
 
-    Task UpdateAsync(Product product);
+        Task UpdateAsync(Product product);
 
-    Task DeleteAsync(int productId);
-  }
+        Task DeleteAsync(int productId);
+
+        void ClearCache();
+    }
 }
